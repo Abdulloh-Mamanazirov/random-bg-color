@@ -1,15 +1,12 @@
-let image = document.querySelector(".bulb");
-let body = document.getElementsByTagName("body")[0];
+let body = document.getElementsByTagName('body')[0];
+let h1 = document.getElementsByTagName('h1')[0];
 
 setInterval(() => {
-  let src = image.getAttribute("src");
-//   let bor = body.classList.contains("shadow");
-  if (src === "images/light-on.png") {
-    // body.classList.add("shadow");
-    image.setAttribute("src", "images/light-off.png");
-  }else {
-    // body.classList.remove("shadow");
-    body.style.backgroundColor = "yellow"
-    image.setAttribute("src", "images/light-on.png");
-  }
-}, 2000);
+    let num1 = Math.floor(Math.random()* 255)
+    let num2 = Math.floor(Math.random()* 255)
+    let num3 = Math.floor(Math.random()* 255)
+    body.style.backgroundColor = `rgb(${num1}, ${num2}, ${num3})`;
+    h1.style.color = `rgb(${num2}, ${num3}, ${num1})`;
+    h1.style.textShadow = `0 0 5px rgb(${num2}, ${num3}, ${num1})`;
+    console.log(num1,num2,num3);
+}, 1000);
